@@ -1,0 +1,16 @@
+name: Scheduled Cache Warmer
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'  # Every 15mins, '0 */6 * * *'  # Every 6 hours
+  workflow_dispatch:       # Allows you to manually run it from GitHub UI
+
+jobs:
+  warm-cache:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Warm homepage
+        run: curl -s https://kuremi.in > /dev/null
+
+      - name: Warm QR redirect page
+        run: curl -s https://kuremi.in/qr > /dev/null
