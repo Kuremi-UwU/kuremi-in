@@ -2,7 +2,7 @@ name: Scheduled Cache Warmer
 #version 0.9
 on:
   schedule:
-    - cron: '*/15 * * * *'  # Every 15mins, '0 */6 * * *'  # Every 6 hours
+    - cron: '*/55 * * * *'  # Every 55mins, '0 */6 * * *'  # Every 6 hours
   workflow_dispatch:       # Allows you to manually run it from GitHub UI
 
 jobs:
