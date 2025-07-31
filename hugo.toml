@@ -1,0 +1,17 @@
+baseURL = 'https://kuremi.in/'
+languageCode = 'en-us'
+title = 'Kuremi'
+theme = 'coming-soon'
+enableEmoji = true
+
+[params]
+    title = "Kuremi"
+    description = "Krish <3"
+    phrases = ["Nerd", "Gamer", "Dweeb", "#Woke", "Midfluencer", "Performative", "Freethinker ", "Unverified", "Rebranded", "Benched", "Strength Main", "Parser", "Boosted", "Elon Musk Fan", "My Wife left me", "I really need help", "Please send help", "I Really Loved her", "Why did she leave ?", "She even took the kids", "I don't know what to do anymore", "I still remember our first night together when we met", "She had this beautiful pearl necklace that her mom gave her", "Her smile pierced the moons light", "She looked at me and said", "\"I am really glad i met you\"", "Was she lying?", "Why would she lie like that?", "We made a vow and she broke it", "and I'm just a hollow man of i once was", "What wont i do to go back to that time", "Anyway lol fml i guess", "#Trump2030", "Rimworld Organ Harvester", "WoW addon Manager", "I cant do this anymore"]
+    links = [
+    {name = "Steam", url = "https://steamcommunity.com/id/Kuremi_UwU/", newTab = true},    
+    {name = "Instagram", url = "https://instagram.com/kuremi_uwu/", newTab = true},    
+    {name = "Twitter", url = "https://x.com/Kuremi_UwU/", newTab = true},
+    ] 
+    backgroundVideo = "bg.mp4"
+    footer = "email: krish@sigmamail.in  | Discord: Kuremi"
