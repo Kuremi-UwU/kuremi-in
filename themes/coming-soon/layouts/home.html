@@ -13,7 +13,7 @@
                 </video>
             {{ end }}
             <div class='content'>
-                <div>
+                <div class='glass-panel'>
                     <div class='contenthead'>
                         <h3 class='contentheading'>{{ .Site.Params.title }}</h3>
                     </div>
@@ -33,6 +33,13 @@
             </div>
         </div>
     </div>
+
+    <aside class="review-mascot" aria-label="Review prompt">
+        <div class="review-mascot__bubble">
+            <a class="review-mascot__btn" href="https://kuremi.vercel.app/" target="_blank" rel="noopener noreferrer">Review me :3</a>
+        </div>
+        <img class="review-mascot__img" src="{{ "review-mascot.gif" | relURL }}" width="120" height="140" alt="Manga character asking for a review">
+    </aside>
 
     <!-- JS for typewritter -->
     <script>
