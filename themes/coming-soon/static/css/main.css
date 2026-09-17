@@ -28,8 +28,51 @@
 }
 
 .content {
+    display: flex;
+    justify-content: center;
     padding-bottom: 5%;
     padding-top: 8%;
+    width: 100%;
+}
+
+.glass-panel {
+    background:
+        linear-gradient(165deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 38%, rgba(0, 0, 0, 0.08) 100%),
+        rgba(10, 12, 16, 0.18);
+    backdrop-filter: blur(10px) saturate(130%);
+    -webkit-backdrop-filter: blur(10px) saturate(130%);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 24px;
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.16),
+        inset 0 -8px 14px rgba(0, 0, 0, 0.08);
+    isolation: isolate;
+    max-width: min(92vw, 440px);
+    overflow: hidden;
+    padding: 22px 28px 10px;
+    position: relative;
+    width: min(92vw, 440px);
+}
+
+.glass-panel::before {
+    background: radial-gradient(120% 80% at 78% 0%, rgba(255, 255, 255, 0.12), transparent 58%);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: 0;
+}
+
+.glass-panel > * {
+    position: relative;
+    z-index: 1;
+}
+
+.glass-panel--footer {
+    max-width: min(92vw, 560px);
+    padding: 8px 20px;
+    width: auto;
 }
 
 .content div {
@@ -58,10 +101,13 @@
 
 .animatedText {
     font-size: 18px;
-    height: 5vh;
+    height: auto;
+    min-height: 2.4em;
     padding-bottom: 10px;
     text-shadow: 0 0 5px #fff;
+    white-space: normal;
     width: 100%;
+    word-break: break-word;
 }
 
 /* Style for both button and anchor */
@@ -89,9 +135,10 @@ footer {
     bottom: 0;
     display: flex;
     font-family: system-ui, -apple-system, sans-serif;
-    height: 50px;
+    height: auto;
     justify-content: center;
     left: 0;
+    padding: 12px 16px 18px;
     position: fixed;
     right: 0;
     width: 100%;
@@ -111,9 +158,93 @@ footer a:hover {
     color: grey;
 }
 
+.review-mascot {
+    align-items: flex-end;
+    bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    position: fixed;
+    right: 18px;
+    z-index: 20;
+}
+
+.review-mascot__bubble {
+    background: #fff;
+    border: 2.5px solid #111;
+    border-radius: 18px;
+    box-shadow: 3px 3px 0 #111;
+    margin-right: 10px;
+    padding: 8px 10px;
+    position: relative;
+}
+
+.review-mascot__bubble::after {
+    background: #fff;
+    border-bottom: 2.5px solid #111;
+    border-right: 2.5px solid #111;
+    bottom: -8px;
+    content: "";
+    height: 14px;
+    position: absolute;
+    right: 28px;
+    transform: rotate(45deg);
+    width: 14px;
+}
+
+.review-mascot__btn {
+    background: #111;
+    border: 2px solid #111;
+    border-radius: 999px;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 6px 14px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.review-mascot__btn:hover,
+.review-mascot__btn:focus {
+    background: #fff;
+    color: #111;
+}
+
+.review-mascot__img {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.28);
+    display: block;
+    height: auto;
+    max-height: 16vh;
+    max-width: min(120px, 18vw);
+    object-fit: contain;
+    pointer-events: none;
+    width: auto;
+}
+
 /* Responsive */
 @media screen AND (max-width: 700px) {
     .mainbg {
         height: 100vh !important;
+    }
+
+    .review-mascot {
+        bottom: 16px;
+        left: auto;
+        right: 8px;
+        transform: none;
+    }
+
+    .review-mascot__img {
+        max-height: 14vh;
+        max-width: min(100px, 28vw);
+    }
+
+    .review-mascot__btn {
+        font-size: 12px;
+        padding: 5px 12px;
     }
 }
